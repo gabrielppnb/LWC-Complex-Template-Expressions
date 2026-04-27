@@ -1,0 +1,17 @@
+<template>
+	<section class="demo">
+		<h2>Complex Template Expressions PoC</h2>
+
+		<p class="line"><strong>Greeting:</strong> {`Hello ${user?.profile?.name ?? 'Guest'}`}</p>
+		<p class="line"><strong>Total + Tax:</strong> {amount * (1 + taxRate)}</p>
+		<p class="line"><strong>Stock:</strong> {count > 10 ? 'High stock' : 'Low stock'}</p>
+		<p class="line"><strong>Active Items:</strong> {items.filter(i => i.active).map(i => i.name).join(', ') || 'None'}</p>
+		<p class="line"><strong>Cart Count:</strong> {itemCount}</p>
+
+		<div class="actions">
+			<button class="btn" onclick="{() => itemCount--}">Inline -1</button>
+			<button class="btn" onclick="{() => itemCount++}">Inline +1</button>
+			<button class="btn" onclick={resetCount}>Reset (JS handler)</button>
+		</div>
+	</section>
+</template>
